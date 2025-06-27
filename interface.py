@@ -1,9 +1,8 @@
-import qutip
-from abc import ABC, ABCMeta, abstractmethod
+from abc import ABCMeta, abstractmethod
 from contextlib import contextmanager
 
 
-class Qubit(metclass=ABCMeta):
+class Qubit(metaclass=ABCMeta):
     @abstractmethod
     def h(self):
         pass
