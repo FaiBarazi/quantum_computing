@@ -8,6 +8,10 @@ class Qubit(metaclass=ABCMeta):
         pass
 
     @abstractmethod
+    def x(self):
+        pass
+
+    @abstractmethod
     def measure(self) -> bool:
         pass
 
