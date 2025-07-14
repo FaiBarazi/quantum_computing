@@ -7,6 +7,7 @@ KET_1 = np.array([[0], [1]], dtype=complex)
 KET_PLUS = (KET_0 + KET_1) / np.sqrt(2)
 # Hadamard Gate
 H = np.array([[1, 1], [1, -1]], dtype=complex) / np.sqrt(2)
+X = np.array([[0, 1], [1, 0]], dtype=complex) / np.sqrt(2)
 
 
 class SimulatedQubit(Qubit):
@@ -15,6 +16,9 @@ class SimulatedQubit(Qubit):
 
     def h(self):
         self.state = H @ self.state
+
+    def x(self):
+        self.state = X @ self.state
 
     def measure(self) -> bool:
         pr0 = np.abs(self.state[0, 0]) ** 2
